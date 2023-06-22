@@ -1,0 +1,195 @@
+
+*{
+  font-family: monospace;
+  color: aqua;
+}
+#bg{
+  background-image: url(./images/test2.gif);
+
+}
+#home{
+  background-image: url(./images/d.gif);
+}
+  
+.skills-bar {
+  padding: 25px 30px;
+}
+
+.skills-bar .bar {
+  margin: 25px 0;
+}
+
+.skills-bar .bar .info span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: white;
+}
+
+.skills-bar .bar .info {
+  margin-bottom: 8px;
+  color: #07374a;
+}
+
+.skills-bar .bar .progress-line {
+  position: relative;
+  height: 10px;
+  width: 550px;
+  background: #f0f0f0;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+.bar .progress-line span {
+  position: absolute;
+  background: #00717f;
+  height: 100%;
+  border-radius: 10px;
+  transform: scaleX(0);
+  transform-origin: left;
+  text-transfrom : uppercase;
+  animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+}
+
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress-line .html {
+  width: 100%;
+}
+.progress-line .css {
+  width: 90%;
+}
+.progress-line .bootstrap {
+  width: 90%;
+}
+.progress-line .javascript {
+  width: 52%;
+}
+.progress-line .c {
+  width: 90%;
+}
+
+.bar .progress-line span::before {
+  position: absolute;
+  content: "";
+  height: 0;
+  right: 0;
+  top: -14px;
+  width: 0;
+  border: 7px solid transparent;
+  border-bottom-width: 0px;
+  border-right-width: 0px;
+  border-top-style: #f0f0f0;
+  border-top-color: #07374a;
+}
+
+.bar .progress-line span::after {
+  position: absolute;
+  right: 0;
+  top: -28px;
+  color: #f0f0f0;
+  font-size: 12px;
+  font-weight: 700;
+  background: #07374a;
+  padding: 1px 8px;
+  border-radius: 3px;
+}
+
+
+.progress-line .html::after {
+  content: "100%";
+}
+.progress-line .css::after {
+  content: "90%";
+}
+.progress-line .bootstrap::after {
+  content: "90%";
+}
+.progress-line .javascript::after {
+  content: "62%";
+}
+.progress-line .c::after {
+  content: "90%";
+}
+
+/* ////........Media Query........//// */
+
+@media (max-width: 700px) {
+    .skills{
+        width: 80%;
+    }
+
+    .skills-bar .bar .progress-line{
+        width: 100%;
+    }
+}   
+#button {
+ --glow-color: rgb(217, 176, 255);
+ --glow-spread-color: rgba(191, 123, 255, 0.781);
+ --enhanced-glow-color: rgb(231, 206, 255);
+ --btn-color: rgb(100, 61, 136);
+ border: .25em solid var(--glow-color);
+ padding: 1em 3em;
+ color: var(--glow-color);
+ font-size: 15px;
+ font-weight: bold;
+ background-color: var(--btn-color);
+ border-radius: 1em;
+ outline: none;
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 1em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+ text-shadow: 0 0 .5em var(--glow-color);
+ position: relative;
+ transition: all 0.3s;
+}
+
+#button::after {
+ pointer-events: none;
+ content: "";
+ position: absolute;
+ top: 120%;
+ left: 0;
+ height: 100%;
+ width: 100%;
+ background-color: var(--glow-spread-color);
+ filter: blur(2em);
+ opacity: .7;
+ transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
+}
+
+#button:hover {
+ color: var(--btn-color);
+ background-color: var(--glow-color);
+ box-shadow: 0 0 1em .25em var(--glow-color),
+        0 0 4em 2em var(--glow-spread-color),
+        inset 0 0 .75em .25em var(--glow-color);
+}
+
+#button:active {
+ box-shadow: 0 0 0.6em .25em var(--glow-color),
+        0 0 2.5em 2em var(--glow-spread-color),
+        inset 0 0 .5em .25em var(--glow-color);
+}
+
+@keyframes fadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeRight {
+  animation-name: fadeRight;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
